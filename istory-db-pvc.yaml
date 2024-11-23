@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pv-claim
+  labels:
+    app: mysql
+spec:
+  storageClassName: gp2-persistent
+  accessModes:
+    - ReadWriteOnce # 한 개의 노드에만 읽고쓰기
+  resources:
+    requests:
+      storage: 10Gi
